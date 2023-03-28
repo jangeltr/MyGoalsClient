@@ -1,0 +1,72 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+npm create vite@latest
+cd my-project
+npm install 
+
+////
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+////tailwind.config.cjs
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+////index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+PARA UTILIZAR FlowBite: es una libreria de componentes para tailwind
+
+1.- npm install flowbite
+
+2.- En el archivo tailwind.config.js que se genera
+
+module.exports = {
+  content: [
+    "./src/html/**/*.{html,js}",
+    "./node_modules/flowbite/**/*.js"   //agregar esta linea
+    ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+3.- En el archivo main.ts agregar esta linea en el head
+
+    import 'flowbite'
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Para utilizar los iconos que estan en https://www.flaticon.com/
+
+1.- Instalar los iconos
+
+npm i @flaticon/flaticon-uicons
+
+2.- en el archivo de estilos, al inicio agregar
+
+@import "../../node_modules/@flaticon/flaticon-uicons/css/all/all.css";
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Para ejecutar el proyecto
+
+npm run dev
+
+Para generar el de produccion
+
+npm run buid

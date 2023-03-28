@@ -1,24 +1,21 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter'
+import 'flowbite'
+import myHeader from './ts/header'
+import myFooter from './ts/footer'
+import myModalGlossary from './ts/modalGlossary'
+import myModalSettings from './ts/modalSettings'
+import myModalPurpose from './ts/modalPurpose'
+import myModalPrinciples from './ts/modalPrinciples'
+import myModalGoals from './ts/modalGoals'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+customElements.define("my-header", myHeader)
+customElements.define("my-footer", myFooter)
+customElements.define("my-glossary", myModalGlossary)
+customElements.define("my-settings", myModalSettings)
+customElements.define("my-purpose", myModalPurpose)
+customElements.define("my-principles",myModalPrinciples)
+customElements.define("my-goals",myModalGoals)
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// document.querySelector<HTMLDivElement>('main')!.innerHTML = ``
+
+
